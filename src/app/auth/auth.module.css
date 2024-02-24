@@ -1,0 +1,42 @@
+
+
+
+.formContainer {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer form {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.formContainer form label {
+    font-weight: 700;
+}
+
+.formContainer form input[type="text"],
+.formContainer form input[type="email"],
+.formContainer form input[type="password"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.formContainer form button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formContainer form button:hover {
+    background-color: #555;
+}
