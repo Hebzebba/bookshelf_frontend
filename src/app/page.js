@@ -8,13 +8,6 @@ export default function Home() {
 
   return (
     <>
-      <header>
-        <div className="container mx-auto flex items-center justify-between">
-          <h1>Lecture Notes</h1>
-          <p>Welcome, Seth</p>
-        </div>
-      </header>
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="filter-section">
           <div>
