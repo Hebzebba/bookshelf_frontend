@@ -27,7 +27,15 @@ export default function Home() {
               <option value="2023">2023</option>
             </select>
           </div>
-
+          <div>
+            <label htmlFor="level">Level:</label>
+            <select id="level">
+              <option value="all">All Levels</option>
+              <option value="one">one</option>
+              <option value="two">Two</option>
+              <option value="three">Three</option>
+            </select>
+          </div>
           <div>
             <label htmlFor="semister">Semister:</label>
             <select id="semister">

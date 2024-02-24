@@ -7,15 +7,12 @@
     padding: 2rem;
 }
 
-.widget {
+.widget, .upload {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard h2 {
-    margin-bottom: 1rem;
+    height: 400px;
 }
 
 .widget ul {
@@ -28,30 +25,40 @@
     padding: 0.5rem 0;
 }
 
-.widget form {
+.widget {
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 0.2rem;
 }
 
-.widget form label {
+.widget label {
     font-weight: 700;
 }
 
-.widget form input[type="file"] {
-    padding: 0.5rem;
+.upload input[type="file"] {
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.widget form button {
-    padding: 0.5rem 1rem;
+.upload button {
+    padding: 1rem 1rem;
     background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
 
-.widget form button:hover {
+.upload button:hover {
     background-color: #555;
+}
+
+.widget input[type="text"], .widget select{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
 }
