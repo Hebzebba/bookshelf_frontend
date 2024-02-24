@@ -1,4 +1,11 @@
+"use client";
+import { useForm } from "react-hook-form";
+
 export default function Home() {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
   return (
     <>
       <header>
@@ -8,26 +15,36 @@ export default function Home() {
         </div>
       </header>
 
-      <div class="filter-section">
-        <label for="topic">Topic:</label>
-        <select id="topic">
-          <option value="all">All Topics</option>
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-        </select>
-        <label for="date">Date:</label>
-        <select id="date">
-          <option value="all">All Dates</option>
-          <option value="2022">2022</option>
-          <option value="2023">2023</option>
-        </select>
-        <label for="type">Type:</label>
-        <select id="type">
-          <option value="all">All Types</option>
-          <option value="pdf">PDF</option>
-          <option value="video">Video</option>
-        </select>
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="filter-section">
+          <div>
+            <label htmlFor="department">Department:</label>
+            <select id="department" {...register("department")}>
+              <option value="all">All Departments</option>
+              <option value="html">Com science</option>
+              <option value="css">Management</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="course">Course:</label>
+            <select id="course">
+              <option value="all">All Courses</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="semister">Semister:</label>
+            <select id="semister">
+              <option value="all">All Semisters</option>
+              <option value="one">one</option>
+              <option value="two">Two</option>
+            </select>
+          </div>
+        </div>
+      </form>
       <main>
         <section className="note">
           <h2>Topic 1: Introduction to HTML</h2>

@@ -19,7 +19,7 @@ const page = () => {
         <div className={styles.widget}>
           <h2>Upload Slides</h2>
           <form>
-            <label for="file">Select File:</label>
+            <label htmlFor="file">Select File:</label>
             <input type="file" id="file" name="file" accept=".pdf" />
             <button type="submit">Upload</button>
           </form>
