@@ -21,7 +21,7 @@ const page = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.detail === "student not found") {
+        if (data.detail === "admin not found") {
           alert("Invalid user");
         } else {
           localStorage.setItem("user_info", JSON.stringify(data));

@@ -9,11 +9,13 @@ import { usePathname } from "next/navigation";
 const page = () => {
   const { register, handleSubmit } = useForm();
   const [slides, setSlides] = useState([]);
+  const [info, setInfo] = useState([]);
   const pathname = usePathname();
 
   useEffect(() => {
     authorize(pathname);
     const user_info = JSON.parse(localStorage.getItem("user_info"));
+    setInfo(user_info);
 
     if (typeof window !== "undefined") {
       fetch(
@@ -21,7 +23,7 @@ const page = () => {
       )
         .then((res) => res.json())
         .then((data) => setSlides(data))
-        .catch((error) => console.log("Failed to fetch"));
+        .catch((error) => console.error(error));
     }
   }, []);
 
@@ -30,7 +32,7 @@ const page = () => {
     formData.append("course", data.course);
     formData.append("department", data.department);
     formData.append("level", data.level);
-    formData.append("semister", data.semister);
+    formData.append("semester", data.semester);
     formData.append("lecturer_email", info.email);
     formData.append("slides", data.file[0]);
 
@@ -40,10 +42,13 @@ const page = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        window.alert("Upload success");
+        if (data.message) {
+          window.alert("Upload success");
+        } else {
+          window.alert("Upload failed");
+        }
       })
-      .catch((error) => console.log("error in request"));
+      .catch((error) => console.error("error in request"));
   };
 
   const handleDelete = (id) => {
@@ -56,7 +61,7 @@ const page = () => {
           alert("Item deleted");
         }
       })
-      .catch((error) => console.log("error occured"));
+      .catch((error) => console.error("error occured"));
   };
 
   return (
@@ -104,9 +109,9 @@ const page = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="semister">Semister:</label>
+            <label htmlFor="semester">Semester:</label>
             <br />
-            <select id="semister" {...register("semister")}>
+            <select id="semester" {...register("semester")}>
               <option value="one">one</option>
               <option value="two">Two</option>
             </select>
