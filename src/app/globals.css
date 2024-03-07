@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
   color: #333;
 }
 
-a{
-  text-decoration:  none;
+a {
+  text-decoration: none;
   color: inherit;
 }
 
@@ -62,7 +62,8 @@ section.note:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -72,3 +73,106 @@ p {
   margin-bottom: 1rem;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  cursor: pointer;
+  display: flex;
+  right: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px;
+}
+.dropdown-content small:hover {
+  font-weight: bold;
+}
+
+/* Admin styles */
+.admin-container {
+  width: 80vw;
+  height: 80vh;
+  margin: 10px auto;
+}
+.admin-container .content-container {
+  height: inherit;
+  overflow-y: scroll;
+}
+
+.admin-container .header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.admin-container .header p {
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid black;
+  padding:5px 10px;
+  border-radius: 15px;
+}
+
+.admin-container .content-container .content{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 10px;
+  padding: 15px;
+}
+
+/* Reset default table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: start;
+}
+
+/* Style the table header */
+thead {
+  background-color: #f2f2f2;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Alternate row colors */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+td>button{
+  border: 1px solid rgb(255, 92, 52);
+  padding: 10px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.active{
+  background: rgb(53, 52, 52);
+  color: #fff;
+}

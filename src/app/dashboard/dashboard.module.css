@@ -15,19 +15,26 @@
     height: 400px;
 }
 
-.widget ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+
+.slidesList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px; 
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.widget ul li {
-    padding: 0.5rem 0;
+.slidesList:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-.widget {
-    display: grid;
-    grid-gap: 0.2rem;
+.slidesList button{
+    background-color: rgb(247, 83, 83);
+    padding: .5rem 2rem;
+    border-radius: 15px;
+    font-weight: bold;
+    color: white;
 }
 
 .widget label {

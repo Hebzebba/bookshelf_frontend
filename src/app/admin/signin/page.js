@@ -1,5 +1,5 @@
 "use client";
-import styles from "../auth.module.css";
+import styles from "../../auth/auth.module.css";
 import { useForm } from "react-hook-form";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
@@ -15,7 +15,7 @@ const page = () => {
     const formData = new FormData();
     formData.append("username", data.username);
     formData.append("password", data.password);
-    fetch(`http://localhost:8000/login`, {
+    fetch(`http://localhost:8000/login/admin`, {
       method: "POST",
       body: formData,
     })
@@ -34,11 +34,11 @@ const page = () => {
     <div>
       <div className={styles.formContainer}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="index_number">Index Number:</label>
+          <label htmlFor="index_number">Admin:</label>
           <input
             type="text"
-            id="index_number"
-            name="index_number"
+            id="name"
+            name="name"
             {...register("username")}
             required
           />
