@@ -17,7 +17,20 @@ const page = () => {
       .catch((error) => console.log("Failed to fetch"));
   }, []);
 
-  console.log(lecturers);
+  const handleDelete = (email) => {
+    fetch(`http://localhost:8000/api/v1/lecturer/delete?email=${email}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message) {
+          window.alert("User deleted");
+        } else {
+          window.alert("Failed to delete user");
+        }
+      })
+      .catch((error) => console.error("Failed to fetch"));
+  };
   return (
     <div className="admin-container">
       <Header />
@@ -40,7 +53,9 @@ const page = () => {
                     <td>{lecturer.email}</td>
                     <td>{lecturer.role}</td>
                     <td>
-                      <button>Delete</button>
+                      <button onClick={() => handleDelete(lecturer.email)}>
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 ))}
